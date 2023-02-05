@@ -9,9 +9,7 @@ using Microsoft.EntityFrameworkCore;
 // shift alt f
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class UsersController : ControllerBase
+public class UsersController : BaseApiController
 {
 
     private readonly DataContext _context;
@@ -32,5 +30,7 @@ public class UsersController : ControllerBase
     {
         return await _context.Users.FindAsync(id);
     }
+
+    // [HttpPost("register")]
 
 }
